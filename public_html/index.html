@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+        overflow: hidden;
+        position: relative;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 4em;
+        font-weight: 800;
+        text-align: center;
+        color: #fff;
+        letter-spacing: 3px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.15),
+          0 0 25px rgba(255, 255, 255, 0.7);
+        z-index: 2;
+        animation: popIn 2s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Clouds */
+      .cloud {
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0.9;
+        filter: blur(1px);
+        animation: floatClouds linear infinite;
+      }
+
+      .cloud::before,
+      .cloud::after {
+        content: "";
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+      }
+
+      .cloud::before {
+        width: 60%;
+        height: 60%;
+        top: -30%;
+        left: -20%;
+      }
+
+      .cloud::after {
+        width: 70%;
+        height: 70%;
+        top: -20%;
+        right: -25%;
+      }
+
+      @keyframes floatClouds {
+        from {
+          transform: translateX(-200px);
+        }
+        to {
+          transform: translateX(110vw);
+        }
+      }
+
+      /* Example floating circles (balloons vibe) */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: float 12s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-60px) scale(1.1);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+
+    <!-- Clouds -->
+    <div class="cloud" style="width:150px;height:80px;top:20%;left:-200px;animation-duration:40s;"></div>
+    <div class="cloud" style="width:200px;height:100px;top:40%;left:-300px;animation-duration:55s;"></div>
+    <div class="cloud" style="width:120px;height:60px;top:60%;left:-250px;animation-duration:35s;"></div>
+
+    <!-- Playful colorful bubbles -->
+    <div class="circle" style="width:90px;height:90px;top:70%;left:15%;background:#ff9a9e;"></div>
+    <div class="circle" style="width:70px;height:70px;top:20%;left:70%;background:#fad0c4;animation-delay:2s;"></div>
+    <div class="circle" style="width:100px;height:100px;top:60%;left:80%;background:#a1c4fd;animation-delay:4s;"></div>
+    <div class="circle" style="width:60px;height:60px;top:30%;left:30%;background:#84fab0;animation-delay:6s;"></div>
+  </body>
+</html>
+
